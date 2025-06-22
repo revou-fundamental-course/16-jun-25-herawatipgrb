@@ -3,38 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kalkulator Segitiga</title>
+    <title>Katik - Kalkulator Segitiga</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Kalkulator Segitiga</h1>
-        <form id="triangle-form">
-            <label for="alas">Alas (cm):</label>
-            <input type="number" id="alas" required min="0" step="any">
+        <h1>Welcome to Katik</h1>
+        <p>Hai Sobat, Selamat datang di Katik :)<br>
+        Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
 
-            <label for="tinggi">Tinggi (cm):</label>
-            <input type="number" id="tinggi" required min="0" step="any">
+        <div class="navigation">
+            <button class="active">Segitiga</button>
+            <button class="disabled">Jajar Genjang</button>
+        </div>
 
-            <label for="sisi1">Sisi A (cm):</label>
-            <input type="number" id="sisi1" required min="0" step="any">
+        <div class="content">
+            <div class="header-box">
+                <h2>Luas Segitiga</h2>
+            </div>
 
-            <label for="sisi2">Sisi B (cm):</label>
-            <input type="number" id="sisi2" required min="0" step="any">
+            <!-- ✅ Gambar ditengah sempurna -->
+            <div class="image-container">
+                <img src="https://i0.wp.com/rumushitung.com/wp-content/uploads/2015/07/segitiga-sama-kaki.png?ssl=1" alt="Segitiga Sama Kaki" class="triangle-img">
+            </div>
 
-            <label for="sisi3">Sisi C (cm):</label>
-            <input type="number" id="sisi3" required min="0" step="any">
+            <div class="rumus">
+                <p><strong>Rumus Luas Segitiga yaitu :</strong><br>
+                L = 1/2 x a x t</p>
+                <p><strong>Di mana :</strong><br>
+                L = Luas<br>
+                a = Panjang Alas<br>
+                t = Tinggi</p>
+            </div>
 
-            <button type="submit">Hitung</button>
-        </form>
-
-        <div id="result" class="hidden">
-            <h2>Hasil Perhitungan:</h2>
-            <p id="luas">Luas: </p>
-            <p id="keliling">Keliling: </p>
+            <div class="form-section">
+                <h3>Hitung Luas Segitiga</h3>
+                <input type="number" id="alas" placeholder="Masukkan alas">
+                <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+                <div id="hasilLuas"></div>
+                <button onclick="hitungLuas()">Hitung</button>
+            </div>
         </div>
     </div>
-
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -6,36 +6,82 @@ body {
 }
 
 .container {
-    max-width: 400px;
+    max-width: 600px;
+    background: white;
     margin: 40px auto;
     padding: 20px;
-    background: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(151, 60, 18, 0.1);
+    text-align: center;
 }
 
 h1, h2 {
-    text-align: center;
     color: #333;
+    margin-bottom: 10px;
 }
 
-label {
-    display: block;
-    margin-top: 10px;
+p {
+    color: #555;
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+.navigation button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navigation button.active {
+    background-color: #0056b3;
+}
+
+.navigation button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.section {
+    margin-top: 30px;
+    text-align: left;
+}
+
+/* ✅ Gambar benar-benar di tengah */
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.form-section {
+    margin-top: 20px;
+    text-align: center;
 }
 
 input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 button {
-    margin-top: 20px;
-    width: 100%;
-    padding: 10px;
-    background-color: #008080;
+    padding: 10px 20px;
+    width: auto;
+    background: #008080;
     color: white;
     border: none;
     border-radius: 5px;
@@ -46,8 +92,9 @@ button:hover {
     background-color: #006666;
 }
 
-#result {
+#hasilLuas {
     margin-top: 20px;
+    font-weight: bold;
 }
 
 .hidden {
