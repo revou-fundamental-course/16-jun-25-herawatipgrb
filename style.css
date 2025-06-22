@@ -1,0 +1,114 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    background: white;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    margin: 0 0 20px;
+}
+
+.navigation {
+    margin: 20px 0;
+}
+
+.navigation button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navigation .active {
+    background-color: #007bff;
+}
+
+.navigation .disabled {
+    background-color: #c0c0c0;
+    cursor: default;
+}
+
+.box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.box-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+.box-content {
+    padding: 20px;
+}
+
+.triangle-img {
+    max-width: 250px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.rumus {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.keterangan {
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.output {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 16px;
+}
