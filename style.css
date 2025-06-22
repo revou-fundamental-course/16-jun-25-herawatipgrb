@@ -1,6 +1,7 @@
+
 body {
     font-family: Arial, sans-serif;
-    background: #f0f0f0;
+    background-color: #f2f2f2;
     margin: 0;
     padding: 0;
 }
@@ -10,93 +11,104 @@ body {
     background: white;
     margin: 40px auto;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(151, 60, 18, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
     text-align: center;
 }
 
-h1, h2 {
+h1 {
     color: #333;
     margin-bottom: 10px;
 }
 
 p {
     color: #555;
+    margin: 0 0 20px;
 }
 
 .navigation {
-    margin-top: 20px;
+    margin: 20px 0;
 }
 
 .navigation button {
     padding: 10px 20px;
     margin: 5px;
-    background-color: #007bff;
-    color: white;
     border: none;
-    border-radius: 5px;
+    color: white;
+    border-radius: 4px;
     cursor: pointer;
 }
 
-.navigation button.active {
-    background-color: #0056b3;
+.navigation .active {
+    background-color: #007bff;
 }
 
-.navigation button.disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+.navigation .disabled {
+    background-color: #c0c0c0;
+    cursor: default;
 }
 
-.section {
-    margin-top: 30px;
-    text-align: left;
-}
-
-/* ✅ Gambar benar-benar di tengah */
-.image-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.image-container img {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    display: inline-block;
-}
-
-.form-section {
+.box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     margin-top: 20px;
-    text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.box-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+}
+
+.box-content {
+    padding: 20px;
+}
+
+.triangle-img {
+    max-width: 250px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.rumus {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.keterangan {
+    text-align: left;
+    font-size: 14px;
+    color: #333;
 }
 
 input {
     width: 90%;
     padding: 10px;
     margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
     box-sizing: border-box;
-    font-size: 16px;
 }
 
 button {
     padding: 10px 20px;
-    width: auto;
-    background: #008080;
-    color: white;
+    background-color: #007bff;
     border: none;
-    border-radius: 5px;
+    color: white;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: #006666;
+    background-color: #0056b3;
 }
 
-#hasilLuas {
-    margin-top: 20px;
+.output {
+    margin: 15px 0;
     font-weight: bold;
-}
-
-.hidden {
-    display: none;
+    font-size: 16px;
 }
