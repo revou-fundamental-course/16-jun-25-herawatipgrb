@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Katik - Kalkulator Segitiga</title>
+
+    <!-- Link ke folder css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
         <h1>Welcome to Katik</h1>
-        <p>Hai Sobat, Selamat datang di Katik :)<br>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
+        <p>Hai Sobat, Selamat datang di Katik :)<br>
+        Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
 
         <div class="navigation">
             <button class="active">Segitiga</button>
@@ -44,6 +47,8 @@
             </div>
         </div>
     </div>
-    <script src="js/script.js"></script>
+
+    <!-- Tambahkan defer agar JS tidak error saat HTML belum termuat -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>
