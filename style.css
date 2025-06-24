@@ -1,3 +1,7 @@
+/* Tambahan class .hidden */
+.hidden {
+  display: none;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -111,4 +115,17 @@ button:hover {
     margin: 15px 0;
     font-weight: bold;
     font-size: 16px;
+}
+
+/* ✅ Tambahan Media Query untuk Tampilan Mobile */
+@media (max-width: 500px) {
+  .container {
+    width: 95%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+
+  input {
+    width: 100%;
+  }
 }
