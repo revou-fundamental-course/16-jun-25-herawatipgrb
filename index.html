@@ -1,54 +1,208 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katik - Kalkulator Segitiga</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katik - Kalkulator Bangun Datar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- Link ke folder css -->
-    <link rel="stylesheet" href="css/style.css">
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .header-welcome {
+      margin-bottom: 20px;
+    }
+
+    .header-welcome h1 {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    .header-welcome p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+    }
+
+    .navigation {
+      margin: 20px 0;
+    }
+
+    .navigation button {
+      padding: 10px 20px;
+      margin: 5px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      background-color: #007bff;
+      cursor: pointer;
+    }
+
+    .navigation .active {
+      background-color: #0056b3;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    img {
+      max-width: 250px;
+      margin-bottom: 15px;
+    }
+
+    .rumus {
+      font-weight: bold;
+      margin: 10px 0 5px;
+    }
+
+    .keterangan {
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        width: 95%;
+        padding: 15px;
+      }
+      input {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Katik</h1>
-        <p>Hai Sobat, Selamat datang di Katik :)<br>
-        Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
-
-        <div class="navigation">
-            <button class="active">Segitiga</button>
-            <button class="disabled">Jajar Genjang</button>
-        </div>
-
-        <div class="box">
-            <div class="box-header">
-                <h2>Luas Segitiga</h2>
-            </div>
-            <div class="box-content">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Triangle_with_notations_2.svg" alt="Segitiga" class="triangle-img">
-                <p class="rumus"><strong>Rumus Luas Segitiga yaitu :</strong><br>L = 1/2 x a x t</p>
-                <p class="keterangan">
-                    Di mana :<br>
-                    L = Luas<br>
-                    a = Panjang Alas<br>
-                    t = Tinggi
-                </p>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="box-header">
-                <h2>Hitung Luas Segitiga</h2>
-            </div>
-            <div class="box-content">
-                <input type="number" id="alas" placeholder="Masukkan alas">
-                <input type="number" id="tinggi" placeholder="Masukkan tinggi">
-                <div id="hasilLuas" class="output"></div>
-                <button onclick="hitungLuas()">Hitung</button>
-            </div>
-        </div>
+  <div class="container">
+    <div class="header-welcome">
+      <h1>Welcome to Katik</h1>
+      <p>Hai Sobat, Selamat datang di Katik :)</p>
+      <p>Sebuah web apps sederhana yang berfungsi untuk menghitung nilai luas dan keliling bangun datar</p>
     </div>
 
-    <!-- Tambahkan defer agar JS tidak error saat HTML belum termuat -->
-    <script src="js/script.js" defer></script>
+    <div class="navigation">
+      <button onclick="tampilkan('segitiga')" class="active" id="btnSegitiga">Segitiga</button>
+      <button onclick="tampilkan('jajarGenjang')" id="btnJajar">Jajar Genjang</button>
+    </div>
+
+    <!-- Segitiga -->
+    <div id="segitiga">
+      <h2>Segitiga</h2>
+      <img src="https://illustoon.com/photo/7455.png" alt="Segitiga" />
+      
+      <p class="rumus">Rumus Luas Segitiga: L = ½ × a × t</p>
+      <p class="rumus">Rumus Keliling Segitiga: K = a + b + c</p>
+      <p class="keterangan">
+        Keterangan:<br>
+        L = Luas<br>
+        K = Keliling<br>
+        a = Panjang alas<br>
+        t = Tinggi<br>
+        b & c = Sisi lainnya
+      </p>
+
+      <form id="formSegitiga">
+        <input type="number" id="alas" placeholder="Alas" required />
+        <input type="number" id="tinggi" placeholder="Tinggi" required />
+        <input type="number" id="sisi1" placeholder="Sisi 1" required />
+        <input type="number" id="sisi2" placeholder="Sisi 2" required />
+        <input type="number" id="sisi3" placeholder="Sisi 3" required />
+        <button type="submit">Hitung</button>
+      </form>
+      <div id="hasilSegitiga" class="output hidden"></div>
+    </div>
+
+    <!-- Jajar Genjang -->
+    <div id="jajarGenjang" class="hidden">
+      <h2>Jajar Genjang</h2>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Parallelepiped_2013-11-29.svg/500px-Parallelepiped_2013-11-29.svg.png" alt="Jajar Genjang" />
+
+      <p class="rumus">Rumus Luas Jajar Genjang: L = a × t</p>
+      <p class="rumus">Rumus Keliling Jajar Genjang: K = 2 × (a + b)</p>
+      <p class="keterangan">
+        Keterangan:<br>
+        L = Luas<br>
+        K = Keliling<br>
+        a = Panjang alas<br>
+        t = Tinggi<br>
+        b = Sisi miring
+      </p>
+
+      <form id="formJajar">
+        <input type="number" id="alasJajar" placeholder="Alas" required />
+        <input type="number" id="tinggiJajar" placeholder="Tinggi" required />
+        <input type="number" id="sisiJajar" placeholder="Sisi Miring" required />
+        <button type="submit">Hitung</button>
+      </form>
+      <div id="hasilJajar" class="output hidden"></div>
+    </div>
+  </div>
+
+  <script>
+    function tampilkan(id) {
+      document.getElementById("segitiga").classList.add("hidden");
+      document.getElementById("jajarGenjang").classList.add("hidden");
+      document.getElementById("btnSegitiga").classList.remove("active");
+      document.getElementById("btnJajar").classList.remove("active");
+
+      document.getElementById(id).classList.remove("hidden");
+      document.getElementById("btn" + capitalize(id)).classList.add("active");
+    }
+
+    function capitalize(s) {
+      return s.charAt(0).toUpperCase() + s.slice(1);
+    }
+
+    document.getElementById("formSegitiga").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const a = parseFloat(document.getElementById("alas").value);
+      const t = parseFloat(document.getElementById("tinggi").value);
+      const s1 = parseFloat(document.getElementById("sisi1").value);
+      const s2 = parseFloat(document.getElementById("sisi2").value);
+      const s3 = parseFloat(document.getElementById("sisi3").value);
+      const luas = 0.5 * a * t;
+      const kel = s1 + s2 + s3;
+      document.getElementById("hasilSegitiga").innerHTML = `Luas: ${luas.toFixed(2)} cm²<br>Keliling: ${kel.toFixed(2)} cm`;
+      document.getElementById("hasilSegitiga").classList.remove("hidden");
+    });
+
+    document.getElementById("formJajar").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const a = parseFloat(document.getElementById("alasJajar").value);
+      const t = parseFloat(document.getElementById("tinggiJajar").value);
+      const b = parseFloat(document.getElementById("sisiJajar").value);
+      const luas = a * t;
+      const kel = 2 * (a + b);
+      document.getElementById("hasilJajar").innerHTML = `Luas: ${luas.toFixed(2)} cm²<br>Keliling: ${kel.toFixed(2)} cm`;
+      document.getElementById("hasilJajar").classList.remove("hidden");
+    });
+  </script>
 </body>
 </html>
